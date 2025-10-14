@@ -1,0 +1,181 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  gap: 12px;
+}
+.history {
+  border-right: 1px solid var(--color-border);
+  padding-right: 12px;
+}
+.historyBtn {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--color-border);
+  padding: 6px 8px;
+  border-radius: 8px;
+  background: var(--color-card);
+  color: var(--color-card-foreground);
+  cursor: pointer;
+}
+.chat {
+  display: grid;
+  gap: 8px;
+}
+.statusRow {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  opacity: 0.9;
+}
+.statusOk {
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+}
+.thread {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 240px;
+}
+.msg {
+  display: grid;
+  gap: 4px;
+}
+.user {
+  justify-items: end;
+}
+.assistant {
+  justify-items: start;
+}
+.msgRole {
+  font-size: 12px;
+  opacity: 0.7;
+}
+.msgBody {
+  max-width: 70ch;
+}
+.code {
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+  padding: 8px;
+  border-radius: 8px;
+  mask-image: linear-gradient(to bottom, black 0, black 85%, transparent 100%);
+  animation: codeReveal 400ms var(--ease-out) 1 both;
+}
+@keyframes codeReveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.composeRow {
+  display: grid;
+  gap: 6px;
+}
+.input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--color-input);
+  color: var(--color-foreground);
+}
+.composeActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.chips {
+  display: flex;
+  gap: 6px;
+}
+.chips button {
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 4px 8px;
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  cursor: pointer;
+  transition: box-shadow var(--motion-med) var(--ease-interactive), transform var(--motion-med) var(--ease-interactive);
+}
+.chips button:hover {
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-ring) 35%, transparent);
+}
+.primary {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border: 1px solid var(--color-border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform var(--motion-fast) var(--ease-interactive), box-shadow var(--motion-med) var(--ease-interactive);
+}
+.primary:active {
+  transform: scale(0.98);
+}
+.resultActions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.btn,
+.linkBtn {
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  text-decoration: none;
+}
+.side {
+  border-left: 1px solid var(--color-border);
+  padding-left: 12px;
+}
+.insights {
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+  padding: 8px;
+  border-radius: 8px;
+  min-height: 120px;
+}
+@keyframes msgIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.thread > .msg {
+  animation: msgIn var(--motion-overlay) var(--ease-out) 1 both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .thread > .msg,
+  .code,
+  .chips button,
+  .primary {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@media (max-width: 1100px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .history,
+  .side {
+    border: none;
+    padding: 0;
+  }
+}

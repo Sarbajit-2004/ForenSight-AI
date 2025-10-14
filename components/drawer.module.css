@@ -1,0 +1,69 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: color-mix(in oklch, black 40%, transparent);
+  display: grid;
+  justify-items: end;
+  animation: overlayIn var(--motion-overlay) var(--ease-out) 1 both;
+  backdrop-filter: blur(0px);
+}
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(6px);
+  }
+}
+.panel {
+  height: 100dvh;
+  background: var(--color-card);
+  color: var(--color-card-foreground);
+  border-left: 1px solid var(--color-border);
+  padding: 12px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  transform: translateX(16px);
+  animation: panelIn var(--motion-overlay) var(--ease-out) 1 both;
+}
+@keyframes panelIn {
+  0% {
+    transform: translateX(24px);
+  }
+  70% {
+    transform: translateX(-8px);
+  } /* overshoot */
+  100% {
+    transform: translateX(0);
+  }
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  overflow: auto;
+  padding: 8px 4px;
+}
+.close {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  cursor: pointer;
+}
+.close:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .panel {
+    animation: none !important;
+    transform: none !important;
+  }
+}

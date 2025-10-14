@@ -1,0 +1,135 @@
+.wrap {
+  display: grid;
+  gap: 10px;
+}
+.controlRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left,
+.right {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.btn {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  cursor: pointer;
+}
+.table {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: auto; /* in-section scroll if needed */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+.row,
+.skeletonRow {
+  display: grid;
+  grid-template-columns: 40px repeat(6, minmax(120px, 1fr));
+  gap: 8px;
+  padding: 8px 10px;
+}
+.row:hover {
+  background: color-mix(in oklch, var(--color-muted) 40%, transparent);
+}
+.head {
+  background: var(--color-muted);
+  color: var(--color-muted-foreground);
+  font-weight: 600;
+}
+.cell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* wrap long tokens if needed */
+  overflow-wrap: anywhere;
+}
+.headerBtn {
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  position: relative;
+}
+.headerBtn::after {
+  content: "↕";
+  opacity: 0;
+  margin-inline-start: 6px;
+  transition: opacity var(--motion-med) var(--ease-interactive), transform var(--motion-med) var(--ease-interactive);
+}
+.headerBtn:hover::after {
+  opacity: 0.75;
+}
+.headerBtn[data-sort="asc"]::after {
+  content: "↑";
+  opacity: 1;
+}
+.headerBtn[data-sort="desc"]::after {
+  content: "↓";
+  opacity: 1;
+}
+.skeletonRow {
+  display: grid;
+  grid-template-columns: 40px repeat(6, 1fr);
+  gap: 8px;
+  padding: 8px 10px;
+}
+.skeleton {
+  height: 14px;
+  background: color-mix(in oklch, var(--color-muted) 60%, transparent);
+  border-radius: 6px;
+}
+.errorBanner {
+  color: oklch(0.35 0.2 30);
+  background: oklch(0.92 0.2 30 / 0.3);
+  padding: 8px 10px;
+}
+.emptyRow {
+  opacity: 0.7;
+  padding: 8px 10px;
+}
+.pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.pageInfo {
+  font-size: 13px;
+  opacity: 0.8;
+}
+@media (min-width: 1100px) {
+  /* No changes needed for this media query */
+}
+@media (max-width: 768px) {
+  .head {
+    display: none;
+  }
+  .row,
+  .skeletonRow {
+    grid-template-columns: 1fr;
+    border-top: 1px solid var(--color-border);
+    padding: 12px;
+    gap: 10px;
+  }
+  .cell {
+    white-space: normal;
+    display: grid;
+    gap: 4px;
+  }
+  .cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--color-muted-foreground);
+    font-size: 12px;
+  }
+  .pagination {
+    justify-content: center;
+  }
+}

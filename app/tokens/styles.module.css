@@ -1,0 +1,127 @@
+.wrap {
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+}
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--color-card);
+}
+.swatch {
+  height: 60px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+}
+.name {
+  font-size: 12px;
+  margin-top: 6px;
+  opacity: 0.9;
+}
+
+/* tokens sheet enhancements */
+.section {
+  display: grid;
+  gap: 10px;
+}
+.typeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+.typeCard {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--color-card);
+}
+.typeLabel {
+  font-size: 12px;
+  color: var(--color-muted-foreground);
+  margin-bottom: 6px;
+}
+.typography {
+  line-height: 1.5;
+  color: var(--color-foreground);
+}
+.subtle {
+  font-size: 12px;
+  color: var(--color-muted-foreground);
+}
+.spacingRow {
+  display: flex;
+  gap: 14px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.spaceItem {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+.spaceBar {
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 6px;
+}
+.spaceLabel {
+  font-size: 12px;
+}
+.radiusGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.radiusCard {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--color-card);
+}
+.radiusBox {
+  height: 60px;
+  background: var(--color-accent);
+  border: 1px solid var(--color-border);
+}
+.shadowRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.shadowBox {
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--color-card);
+}
+.containerDemo {
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+  background: var(--color-card);
+}
+.containerBar {
+  font-size: 12px;
+  color: var(--color-muted-foreground);
+  margin-bottom: 8px;
+}
+.grid12Demo {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 6px;
+}
+.grid12Cell {
+  background: var(--color-surface-alt, var(--fs-surface-alt));
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-align: center;
+  padding-block: 8px;
+  color: var(--color-foreground);
+}

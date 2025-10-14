@@ -1,0 +1,81 @@
+.wrap {
+  display: grid;
+  gap: 12px;
+}
+.header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.search {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--color-input);
+  color: var(--color-foreground);
+}
+.filters {
+  display: flex;
+  gap: 6px;
+}
+.filters select {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 6px;
+  background: var(--color-input);
+  color: var(--color-foreground);
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 10px;
+}
+.card {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--color-card);
+}
+.cardHead {
+  display: flex;
+  justify-content: space-between;
+}
+.caseId {
+  font-weight: 600;
+}
+.status {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.title {
+  font-size: 14px;
+  margin-top: 4px;
+}
+.meta {
+  font-size: 12px;
+  opacity: 0.8;
+}
+.hashes {
+  display: flex;
+  gap: 6px;
+  font-size: 12px;
+}
+.rowActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.btn {
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  text-decoration: none;
+}
+.emptyCta {
+  font-size: 12px;
+  opacity: 0.9;
+}

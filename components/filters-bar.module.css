@@ -1,0 +1,62 @@
+.bar {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px;
+  background: var(--color-card);
+  color: var(--color-card-foreground);
+  display: grid;
+  gap: 10px;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+}
+.group {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+.label {
+  opacity: 0.8;
+}
+input,
+select {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-input);
+  color: var(--color-foreground);
+  padding: 6px 8px;
+}
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 1px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+.primary {
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.secondary {
+  background: var(--color-secondary);
+  color: var(--color-secondary-foreground);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+@media (max-width: 1100px) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}

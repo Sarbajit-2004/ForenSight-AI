@@ -1,0 +1,13 @@
+.wrap {
+  position: relative;
+  height: 8px;
+  background: var(--color-muted);
+  border-radius: 999px;
+}
+.marker {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 16px;
+  background: var(--color-primary);
+}
